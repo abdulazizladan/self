@@ -2,55 +2,310 @@
 <html>
     <head>
         <title>
-            YELF
+            YCTF | Home
         </title>
         <link rel="stylesheet" href="./src/output.css">
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        colors: {
+                            'yelf-blue': '#0081A4',
+                            'primary': '#0081A4',
+                            'secondary': '#ffb55b',
+                            'dark': '#005469',
+                            'light': '#E6F4F9'
+                        }
+                    }
+                }
+            }
+        </script>
+        <style>
+            .mobile-menu {
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.5s ease-out;
+            }
+            .mobile-menu.open {
+                max-height: 500px;
+            }
+            .hamburger span {
+                display: block;
+                width: 25px;
+                height: 3px;
+                margin: 5px auto;
+                background-color: #0081A4;
+                transition: all 0.3s ease;
+            }
+            .hamburger.active span:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+            .hamburger.active span:nth-child(2) {
+                opacity: 0;
+            }
+            .hamburger.active span:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+        </style>
     </head>
-    <body class="h-full">
-        <!-- Navbar -->
-        <nav class="py-[25px] w-full flex flex-row justify-between shadow-sm fixed bg-white">
-            <span class="font-bold h-full py-[8px]">YELF logo</span>
-            <ul class="p-1.5 flex flex-row">
-                <li class="p-1.5 text-teal-700 text-[14px] py-[8px] px-[16px] cursor-pointer hover:bg-gray-100">About us</li>
-                <li class="p-1.5 text-teal-700 text-[14px] py-[8px] px-[16px] cursor-pointer  hover:bg-gray-100">Programs</li>
-                <li class="p-1.5 text-teal-700 text-[14px] py-[8px] px-[16px] cursor-pointer hover:bg-gray-100">Research</li>
-                <li class="p-1.5 text-teal-700 text-[14px] py-[8px] px-[16px] cursor-pointer hover:bg-gray-100">News & Publications</li>
-                <li class="p-1.5 text-teal-700 text-[14px] py-[8px] px-[16px] cursor-pointer hover:bg-gray-100">Contact Us</li>
+    <body class="h-full flex flex-col">
+        <!-- Navigation Bar -->
+        <nav class="py-[25px] w-full flex flex-row justify-between items-center shadow-sm fixed bg-white z-50 px-4 md:px-8">
+            <a href="#" class="font-bold p-3 cursor-pointer text-yelf-blue text-xl">YELF logo</a>
+            
+            <!-- Desktop Menu -->
+            <ul class="hidden md:flex flex-row p-1.5">
+                <li>
+                    <a href="about.html" class="p-1.5 text-yelf-blue text-sm py-[8px] px-[16px] cursor-pointer hover:bg-gray-100 transition duration-300">About us</a>
+                </li>
+                <li>
+                    <a href="programs.html" class="p-1.5 text-yelf-blue text-sm py-[8px] px-[16px] cursor-pointer hover:bg-gray-100 transition duration-300">Programs</a>
+                </li>
+                <li>
+                    <a href="research.html" class="p-1.5 text-yelf-blue text-sm py-[8px] px-[16px] cursor-pointer hover:bg-gray-100 transition duration-300">Research</a>
+                </li>
+                <li>
+                    <a href="news.html" class="p-1.5 text-yelf-blue text-sm py-[8px] px-[16px] cursor-pointer hover:bg-gray-100 transition duration-300">News & Publications</a>
+                </li>
+                <li>
+                    <a href="#" class="p-1.5 text-yelf-blue text-sm py-[8px] px-[16px] cursor-pointer hover:bg-gray-100 transition duration-300">Contact Us</a>
+                </li>
             </ul>
+            
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden hamburger" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </nav>
+        
+        <!-- Mobile Menu (Hidden by default) -->
+        <div class="mobile-menu fixed top-[86px] w-full bg-white shadow-md z-40" id="mobileMenu">
+            <ul class="flex flex-col">
+                <li>
+                    <a href="about.html" class="block p-4 text-yelf-blue text-base hover:bg-gray-100 transition duration-300 border-b border-gray-100">About us</a>
+                </li>
+                <li>
+                    <a href="programs.html" class="block p-4 text-yelf-blue text-base hover:bg-gray-100 transition duration-300 border-b border-gray-100">Programs</a>
+                </li>
+                <li>
+                    <a href="research.html" class="block p-4 text-yelf-blue text-base hover:bg-gray-100 transition duration-300 border-b border-gray-100">Research</a>
+                </li>
+                <li>
+                    <a href="news.html" class="block p-4 text-yelf-blue text-base hover:bg-gray-100 transition duration-300 border-b border-gray-100">News & Publications</a>
+                </li>
+                <li>
+                    <a href="#" class="block p-4 text-yelf-blue text-base hover:bg-gray-100 transition duration-300">Contact Us</a>
+                </li>
+            </ul>
+        </div>
 
         <!--Jumbotron -->
-        <section class="flex flex-col items-center w-full aspect-video bg-teal-700 text-white p-10">
+        <section class="flex flex-col items-center w-full aspect-video bg-[#0081A4] text-white p-10 my-[90px]">
             <div class="flex flex-col items-center justify-center h-full gap-5">
-                <div class="p-5 bg-gray-600 w-[676px] text-5xl font-bold rounded-[15px]">Accelerating Climate Action for a Sustainable Future</div>
-                <div class="p-5 bg-gray-600 w-[676px] text-center rounded-[15px]">At YCTF, we are dedicated to driving impactful climate initiatives across Nigeria and Africa. Our mission is to foster a resilient, emissions-free society through innovative solutions and collaborative efforts.</div>
+                <div class="w-[200px] aspect-square rounded-full bg-[#ffb55b]"></div>
+                <div class="p-8 bg-gray-600 w-[676px] text-4xl font-bold rounded-[15px]">Accelerating Climate Action for a Sustainable Future</div>
+                <div class="p-8 bg-gray-600 w-[676px] text-center rounded-[15px]">At YCTF, we are dedicated to driving impactful climate initiatives across Nigeria and Africa. Our mission is to foster a resilient, emissions-free society through innovative solutions and collaborative efforts.</div>
+                <div class="w-full  flex flex-row">
+                    <button class="bg-[#ffb55b] text-white font-bold py-2 px-4 rounded hover:bg-teal-800 transition duration-300">
+                        Learn more
+                    </button>
+                </div>
             </div>
         </section>
 
-        <!-- Main content -->
-        <div class="flex flex-col items-center justify-center h-full">
-            <h1 class="text-3xl font-bold mb-4">Welcome to YELF</h1>
-            <p class="text-lg mb-8">Your one-stop solution for all your needs.</p>
-            <button class="bg-teal-700 text-white font-bold py-2 px-4 rounded hover:bg-teal-800 transition duration-300">
-                Get Started
-            </button>
-        <!-- Main content -->
+        <!-- Main content container -->
+        <div class="flex flex-col items-center">
+            <!-- Program Areas Section -->
+            <section class="bg-primary p-6 md:p-8 lg:p-10 text-white rounded-2xl w-full max-w-6xl mb-12 shadow-lg">
+                <h1 class="text-2xl sm:text-3xl md:text-4xl bg-[#0081A4] font-bold mb-4 text-center">Our Key Program Areas for Climate Action</h1>
+                <div class="section-divider"></div>
+                <p class="text-base sm:text-lg md:text-xl text-center font-light max-w-4xl mx-auto">
+                    At YCTF, we focus on five critical program areas that drive our mission forward. These include Energy, Industry, Finance, Governance, and Resilience and Development. Each area is designed to tackle the unique challenges posed by climate change in Nigeria and beyond.
+                </p>
+            </section>
 
-        <!-- Program Areas-->
+            <!-- Programs Grid -->
+            <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 w-full max-w-6xl mb-16">
+                <!-- Key program card 1 -->
+                <div class="program-card flex flex-col bg-white p-6 rounded-2xl shadow-md transition-all duration-300">
+                    <div class="bg-primary w-full aspect-square rounded-xl flex items-center justify-center">
+                        <i class="fas fa-solar-panel text-white text-5xl"></i>
+                    </div>
+                    <span class="text-primary text-xl md:text-2xl font-bold mt-5">Renewable Energy Transition</span>
+                    <span class="font-light text-gray-600 mt-3">
+                        Accelerating the shift to clean energy sources through community solar projects, policy advocacy, and youth training programs.
+                    </span>
+                </div>
 
-        <!-- Programs -->
+                <!-- Key program card 2 -->
+                <div class="program-card flex flex-col bg-white p-6 rounded-2xl shadow-md transition-all duration-300">
+                    <div class="bg-primary w-full aspect-square rounded-xl flex items-center justify-center">
+                        <i class="fas fa-industry text-white text-5xl"></i>
+                    </div>
+                    <span class="text-primary text-xl md:text-2xl font-bold mt-5">Sustainable Industry</span>
+                    <span class="font-light text-gray-600 mt-3">
+                        Promoting green manufacturing processes, circular economy models, and corporate sustainability initiatives.
+                    </span>
+                </div>
 
-        <!--Sustainable future -->
-        <section>
+                <!-- Key program card 3 -->
+                <div class="program-card flex flex-col bg-white p-6 rounded-2xl shadow-md transition-all duration-300">
+                    <div class="bg-primary w-full aspect-square rounded-xl flex items-center justify-center">
+                        <i class="fas fa-coins text-white text-5xl"></i>
+                    </div>
+                    <span class="text-primary text-xl md:text-2xl font-bold mt-5">Climate Finance</span>
+                    <span class="font-light text-gray-600 mt-3">
+                        Mobilizing investments for climate resilience projects and supporting green startups through funding and mentorship.
+                    </span>
+                </div>
 
-        </section>
+                <!-- Key program card 4 -->
+                <div class="program-card flex flex-col bg-white p-6 rounded-2xl shadow-md transition-all duration-300 md:col-span-2 lg:col-span-1">
+                    <div class="bg-primary w-full aspect-square rounded-xl flex items-center justify-center">
+                        <i class="fas fa-landmark text-white text-5xl"></i>
+                    </div>
+                    <span class="text-primary text-xl md:text-2xl font-bold mt-5">Policy & Governance</span>
+                    <span class="font-light text-gray-600 mt-3">
+                        Advocating for climate-friendly policies and strengthening institutional capacity for environmental governance.
+                    </span>
+                </div>
 
+                <!-- Key program card 5 -->
+                <div class="program-card flex flex-col bg-white p-6 rounded-2xl shadow-md transition-all duration-300">
+                    <div class="bg-primary w-full aspect-square rounded-xl flex items-center justify-center">
+                        <i class="fas fa-hands-helping text-white text-5xl"></i>
+                    </div>
+                    <span class="text-primary text-xl md:text-2xl font-bold mt-5">Community Resilience</span>
+                    <span class="font-light text-gray-600 mt-3">
+                        Building climate-resilient communities through ecosystem restoration and disaster risk reduction programs.
+                    </span>
+                </div>
+
+                <!-- Key program card 6 -->
+                <div class="program-card flex flex-col bg-white p-6 rounded-2xl shadow-md transition-all duration-300">
+                    <div class="bg-primary w-full aspect-square rounded-xl flex items-center justify-center">
+                        <i class="fas fa-graduation-cap text-white text-5xl"></i>
+                    </div>
+                    <span class="text-primary text-xl md:text-2xl font-bold mt-5">Youth Education</span>
+                    <span class="font-light text-gray-600 mt-3">
+                        Empowering young leaders with climate knowledge and skills through workshops, mentorship, and educational resources.
+                    </span>
+                </div>
+            </section>
+
+            <!-- Sustainable future section -->
+            <section class="flex flex-col lg:flex-row items-center justify-between w-full max-w-6xl bg-white p-6 md:p-8 rounded-2xl shadow-md mb-12">
+                <div class="flex flex-col justify-center gap-5 w-full lg:w-1/2 p-4 md:p-6">
+                    <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-primary">Join Us in Building a Sustainable Future</h2>
+                    <p class="text-base md:text-lg text-gray-600">
+                        We invite you to be part of our journey towards a sustainable future. Whether you are an individual, organization, or community, your involvement is crucial in making a difference.
+                    </p>
+                    <div class="mt-4 flex flex-col sm:flex-row gap-4">
+                        <button class="btn-hover bg-secondary text-white font-bold py-3 px-6 rounded-full text-base md:text-lg">
+                            Get Involved
+                        </button>
+                        <button class="btn-hover bg-white border-2 border-primary text-primary font-bold py-3 px-6 rounded-full text-base md:text-lg">
+                            Learn More
+                        </button>
+                    </div>
+                </div>
+
+                <div class="w-full lg:w-1/2 aspect-square mt-8 lg:mt-0 flex items-center justify-center">
+                    <div class="relative w-full h-full bg-gradient-to-br from-primary to-dark rounded-3xl flex items-center justify-center overflow-hidden">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="w-32 h-32 rounded-full bg-teal-300 opacity-20 absolute -top-10 -left-10"></div>
+                            <div class="w-48 h-48 rounded-full bg-amber-200 opacity-20 absolute bottom-10 right-10"></div>
+                        </div>
+                        <div class="relative z-10 text-center p-6">
+                            <i class="fas fa-seedling text-white text-6xl md:text-7xl mb-4"></i>
+                            <h3 class="text-white text-xl md:text-2xl font-bold">Together We Can Make a Difference</h3>
+                            <p class="text-teal-100 mt-2">Join 10,000+ climate champions</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Stats section -->
+            <section class="w-full max-w-6xl bg-primary text-white p-8 rounded-2xl shadow-lg mb-16">
+                <h2 class="text-2xl md:text-3xl font-bold text-center mb-8">Our Impact in Numbers</h2>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                    <div class="text-center">
+                        <div class="text-3xl md:text-4xl font-bold mb-2">15+</div>
+                        <div class="text-sm md:text-base">Projects</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl md:text-4xl font-bold mb-2">32</div>
+                        <div class="text-sm md:text-base">Communities</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl md:text-4xl font-bold mb-2">5,200+</div>
+                        <div class="text-sm md:text-base">Youth Trained</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl md:text-4xl font-bold mb-2">8</div>
+                        <div class="text-sm md:text-base">Countries</div>
+                    </div>
+                </div>
+            </section>
         </div>
 
         <!-- footer -->
-         <footer class="bottom-0 top-0 sticky w-full bg-[#0081A4] text-white">
-            This is the footer
+         <footer class="bottom-0 top-0 sticky w-full bg-[#0081A4] text-white flex flex-row">
+            
+            <div class="flex flex-col items-center justify-center p-5">
+                <p class="text-sm">© 2023 YELF. All rights reserved.</p>
+                <div class="flex flex-row gap-4 mt-2">
+                    <a href="#" class="text-white hover:text-gray-300">Privacy Policy</a>
+                    <a href="#" class="text-white hover:text-gray-300">Terms of Service</a>
+                </div>
+            </div>
+            <div class="flex flex-col p-5">
+                <span class="text-xl font-bold">Quick Llinks</span>
+                <ul>
+                    <li class="text-sm"><a href="#" class="text-white hover:text-gray-300">About Us</a></li>
+                    <li class="text-sm"><a href="#" class="text-white hover:text-gray-300">Our Programs</a></li>    
+                    <li class="text-sm"><a href="#" class="text-white hover:text-gray-300">Research Hub</a></li>
+                    <li class="text-sm"><a href="#" class="text-white hover:text-gray-300">News & Publications</a></li>
+                    <li class="text-sm"><a href="#" class="text-white hover:text-gray-300">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="flex flex-col p-5">
+                <span class="text-xl font-bold">Contact us</span>
+                <ul>
+                    <li class="text-sm"><a href="#" class="text-white hover:text-gray-300">Linkedin</a></li>
+                    <li class="text-sm"><a href="#" class="text-white hover:text-gray-300">Facebook</a></li>    
+                    <li class="text-sm"><a href="#" class="text-white hover:text-gray-300">X</a></li>
+                    <li class="text-sm"><a href="#" class="text-white hover:text-gray-300">Instagram</a></li>
+                </ul>
+            </div>
          </footer>
+             <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const menuToggle = document.getElementById('menuToggle');
+                const mobileMenu = document.getElementById('mobileMenu');
+                
+                menuToggle.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    mobileMenu.classList.toggle('open');
+                    
+                    // Toggle aria-expanded attribute for accessibility
+                    const isExpanded = this.getAttribute('aria-expanded') === 'true' || false;
+                    this.setAttribute('aria-expanded', !isExpanded);
+                });
+                
+                // Close menu when clicking outside
+                document.addEventListener('click', function(event) {
+                    const isClickInsideNav = event.target.closest('nav') || event.target.closest('#mobileMenu');
+                    if (!isClickInsideNav && mobileMenu.classList.contains('open')) {
+                        menuToggle.classList.remove('active');
+                        mobileMenu.classList.remove('open');
+                        menuToggle.setAttribute('aria-expanded', 'false');
+                    }
+                });
+            });
+        </script>
     </body>
 </html>
 <!-- npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch -->
