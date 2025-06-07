@@ -44,27 +44,27 @@
             }
         </style>
     </head>
-    <body class="h-full">
+    <body class="h-full flex flex-col">
         <!-- Navigation Bar -->
         <nav class="py-[25px] w-full flex flex-row justify-between items-center shadow-sm fixed bg-white z-50 px-4 md:px-8">
-            <a href="index.html" class="font-bold p-3 cursor-pointer text-yelf-blue text-xl">YELF logo</a>
+            <a href="index.html" class="font-bold p-3 cursor-pointer text-yelf-blue text-xl text-[#0081A4]">YELF logo</a>
             
             <!-- Desktop Menu -->
             <ul class="hidden md:flex flex-row p-1.5">
                 <li>
-                    <a href="about.html" class="p-1.5 text-yelf-blue text-sm py-[8px] px-[16px] cursor-pointer hover:bg-gray-100 transition duration-300">About us</a>
+                    <a href="about.html" class="p-1.5 text-yelf-blue text-sm py-[8px] px-[16px] cursor-pointer hover:bg-[#0081A4] hover:text-white rounded-sm transition-all duration-400">About us</a>
                 </li>
                 <li>
-                    <a href="programs.html" class="p-1.5 text-yelf-blue text-sm py-[8px] px-[16px] cursor-pointer hover:bg-gray-100 transition duration-300">Programs</a>
+                    <a href="programs.html" class="p-1.5 text-yelf-blue text-sm py-[8px] px-[16px] cursor-default bg-[#0081A4] text-white rounded-sm transition-all duration-400">Programs</a>
                 </li>
                 <li>
-                    <a href="research.html" class="p-1.5 text-yelf-blue text-sm py-[8px] px-[16px] cursor-pointer hover:bg-gray-100 transition duration-300">Research</a>
+                    <a href="research.html" class="p-1.5 text-yelf-blue text-sm py-[8px] px-[16px] cursor-pointer hover:bg-[#0081A4] hover:text-white rounded-sm transition-all duration-400">Research</a>
                 </li>
                 <li>
-                    <a href="news.html" class="p-1.5 text-yelf-blue text-sm py-[8px] px-[16px] cursor-pointer hover:bg-gray-100 transition duration-300">News & Publications</a>
+                    <a href="news.html" class="p-1.5 text-yelf-blue text-sm py-[8px] px-[16px] cursor-pointer hover:bg-[#0081A4] hover:text-white rounded-sm transition-all duration-400">News & Publications</a>
                 </li>
                 <li>
-                    <a href="#" class="p-1.5 text-yelf-blue text-sm py-[8px] px-[16px] cursor-pointer hover:bg-gray-100 transition duration-300">Contact Us</a>
+                    <a href="#" class="p-1.5 text-yelf-blue text-sm py-[8px] px-[16px] cursor-pointer hover:bg-[#0081A4] hover:text-white rounded-sm transition-all duration-400">Contact Us</a>
                 </li>
             </ul>
             
@@ -96,7 +96,56 @@
                 </li>
             </ul>
         </div>
-            <script>
+
+        <!-- Main content container -->
+        <div class="flex flex-col items-center my-[120px]">
+            <!-- Program Areas Section -->
+            <section class="bg-primary p-6 md:p-8 lg:p-10 text-white bg-[#0081A4] rounded-2xl w-full max-w-6xl mb-12 shadow-lg">
+                <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-center">Our Key Program Areas for Climate Action</h1>
+                <div class="section-divider"></div>
+                <p class="text-base sm:text-lg md:text-xl text-center font-light max-w-4xl mx-auto">
+                    At YCTF, we focus on five critical program areas that drive our mission forward. These include Energy, Industry, Finance, Governance, and Resilience and Development. Each area is designed to tackle the unique challenges posed by climate change in Nigeria and beyond.
+                </p>
+            </section>
+        </div>
+
+        <!-- footer -->
+        <footer class="bottom-0 top-0 w-full bg-[#0081A4] text-white flex flex-row justify-center">
+            <div class="w-full max-w-6xl flex flex-row">
+                <div class="flex flex-col gap-5 justify-center p-5 w-1/2">
+                    <span class="text-white text-xl font-bold">Subscribe to our newsletter</span>
+                    <input type="email" placeholder="email" class="text-[#0081A4] p-3 bg-white">
+                    <div>
+                        <button class="bg-[#ffb55b] text-white font-bold py-2 px-4 rounded hover:bg-teal-800 transition duration-300">
+                            Subscribe
+                        </button>
+                    </div>
+                    <p class="text-sm">© 2023 YELF. All rights reserved.</p>
+                </div>
+
+                <div class="flex flex-col p-5 w-1/4 gap-5">
+                    <span class="text-xl font-bold">Quick Llinks</span>
+                    <ul class="flex flex-col gap-3">
+                        <li class="text-sm"><a href="about.html" class="text-white hover:text-gray-300">About Us</a></li>
+                        <li class="text-sm"><a href="research.html" class="text-white hover:text-gray-300">Our Programs</a></li>    
+                        <li class="text-sm"><a href="research.html" class="text-white hover:text-gray-300">Research Hub</a></li>
+                        <li class="text-sm"><a href="news.html" class="text-white hover:text-gray-300">News & Publications</a></li>
+                        <li class="text-sm"><a href="#contact" class="text-white hover:text-gray-300">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="flex flex-col p-5 w-1/4 gap-5">
+                    <span class="text-xl font-bold">Contact us</span>
+                    <ul class="flex flex-col gap-3">
+                        <li class="text-sm"><a href="https://linkedin.com" class="text-white hover:text-gray-300">Linkedin</a></li>
+                        <li class="text-sm"><a href="https://facebook.com" class="text-white hover:text-gray-300">Facebook</a></li>    
+                        <li class="text-sm"><a href="https://x.com" class="text-white hover:text-gray-300">X</a></li>
+                        <li class="text-sm"><a href="https://instagram.com" class="text-white hover:text-gray-300">Instagram</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+        
+        <script>
             document.addEventListener('DOMContentLoaded', function() {
                 const menuToggle = document.getElementById('menuToggle');
                 const mobileMenu = document.getElementById('mobileMenu');
